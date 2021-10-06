@@ -1,0 +1,422 @@
+{
+  "ModelName": "movie",
+  "ModelMetadata": {
+    "Author": "projaguar",
+    "DateCreated": "Aug 17, 2021, 03:13 PM",
+    "DateLastModified": "Aug 17, 2021, 09:44 PM",
+    "Description": "영화계약, 영화",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "movie",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "pk",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "sk",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "gsi1_pk",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "gsi1_sk",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "gsi2_pk",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "gsi2_sk",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "gsi_et_pk",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "gsi_et_sk",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "_ct",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "_et",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "_md",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "status",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractId",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractDate",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractCompany",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractTitle",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractStart",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractEnd",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "contractType",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "amount",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "count",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "memo",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "movieId",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "title",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "thumbnail",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "rated",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "previewUrl",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "scheduleStart",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "scheduleEnd",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "images",
+          "AttributeType": "M"
+        },
+        {
+          "AttributeName": "movieUrl",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "tags",
+          "AttributeType": "L"
+        },
+        {
+          "AttributeName": "summary",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "click",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "view",
+          "AttributeType": "N"
+        },
+        {
+          "AttributeName": "like",
+          "AttributeType": "N"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "gsi1",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "gsi1_pk",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "gsi1_sk",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "gsi2",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "gsi2_pk",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "gsi2_sk",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        },
+        {
+          "IndexName": "gsi_et",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "gsi_et_pk",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "gsi_et_sk",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "pk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "sk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "gsi1_pk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "gsi1_sk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "gsi_et_pk": {
+            "S": "CONTRACT"
+          },
+          "gsi_et_sk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "_ct": {
+            "S": "{생성일}"
+          },
+          "_et": {
+            "S": "CONTRACT"
+          },
+          "_md": {
+            "S": "{변경일}"
+          },
+          "status": {
+            "S": "계약|재계약|만료"
+          },
+          "contractId": {
+            "S": "contractId"
+          },
+          "contractDate": {
+            "S": "계약일"
+          },
+          "contractCompany": {
+            "S": "계약회사"
+          },
+          "contractTitle": {
+            "S": "계약명"
+          },
+          "contractStart": {
+            "S": "계약기간 시작"
+          },
+          "contractEnd": {
+            "S": "계약기간 종료"
+          },
+          "contractType": {
+            "S": "FLAT|MG-RS|RS|MG"
+          }
+        },
+        {
+          "pk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "sk": {
+            "S": "CONTRACT#DETAIL"
+          },
+          "gsi1_pk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "gsi1_sk": {
+            "S": "CONTRACT#DETAIL"
+          },
+          "_ct": {
+            "S": "{생성일}"
+          },
+          "_et": {
+            "S": "CONTRACT#DETAIL"
+          },
+          "_md": {
+            "S": "{변경일}"
+          },
+          "status": {
+            "S": "valid"
+          },
+          "amount": {
+            "N": "300000000"
+          },
+          "count": {
+            "N": "5"
+          },
+          "memo": {
+            "S": "비고"
+          }
+        },
+        {
+          "pk": {
+            "S": "MOVIE#{movieId}"
+          },
+          "sk": {
+            "S": "MOVIE#{movieId}"
+          },
+          "gsi1_pk": {
+            "S": "CONTRACT#{contractId}"
+          },
+          "gsi1_sk": {
+            "S": "MOVIE#{movieId}"
+          },
+          "gsi_et_pk": {
+            "S": "MOVIE"
+          },
+          "gsi_et_sk": {
+            "S": "MOVIE#{movieId}"
+          },
+          "_ct": {
+            "S": "{생성일}"
+          },
+          "_et": {
+            "S": "MOVIE"
+          },
+          "_md": {
+            "S": "{변경일}"
+          },
+          "status": {
+            "S": "valid"
+          },
+          "movieId": {
+            "S": "movieId"
+          },
+          "title": {
+            "S": "제목"
+          },
+          "thumbnail": {
+            "S": "섬네일"
+          },
+          "rated": {
+            "S": "시청등급"
+          },
+          "previewUrl": {
+            "S": "preview CDN"
+          },
+          "click": {
+            "N": "0"
+          },
+          "view": {
+            "N": "0"
+          },
+          "like": {
+            "N": "0"
+          }
+        },
+        {
+          "pk": {
+            "S": "MOVIE#{movieId}"
+          },
+          "sk": {
+            "S": "MOVIE#DETAIL"
+          },
+          "_ct": {
+            "S": "{생성일}"
+          },
+          "_et": {
+            "S": "MOVIE#DETAIL"
+          },
+          "_md": {
+            "S": "{변경일}"
+          },
+          "status": {
+            "S": "valid"
+          },
+          "scheduleStart": {
+            "S": "편성 시작일"
+          },
+          "scheduleEnd": {
+            "S": "편성 종료일"
+          },
+          "movieUrl": {
+            "S": "movie CDN"
+          },
+          "summary": {
+            "S": "줄거리"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "BillingMode": "PROVISIONED",
+      "ProvisionedCapacitySettings": {
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "AutoScalingRead": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        },
+        "AutoScalingWrite": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        }
+      }
+    }
+  ]
+}

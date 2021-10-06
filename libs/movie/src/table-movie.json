@@ -1,0 +1,137 @@
+{
+  "Table": {
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "gsi1_pk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "gsi1_sk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "gsi2_pk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "gsi2_sk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "gsi_et_pk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "gsi_et_sk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "pk",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "sk",
+        "AttributeType": "S"
+      }
+    ],
+    "TableName": "movie",
+    "KeySchema": [
+      {
+        "AttributeName": "pk",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "sk",
+        "KeyType": "RANGE"
+      }
+    ],
+    "TableStatus": "ACTIVE",
+    "CreationDateTime": "2021-08-18T17:10:18.480000+09:00",
+    "ProvisionedThroughput": {
+      "NumberOfDecreasesToday": 0,
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    },
+    "TableSizeBytes": 2030,
+    "ItemCount": 6,
+    "TableArn": "arn:aws:dynamodb:ap-northeast-2:733581661905:table/movie",
+    "TableId": "4b41f87b-8f79-493a-8b3b-7185989acb9c",
+    "GlobalSecondaryIndexes": [
+      {
+        "IndexName": "gsi1",
+        "KeySchema": [
+          {
+            "AttributeName": "gsi1_pk",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "gsi1_sk",
+            "KeyType": "RANGE"
+          }
+        ],
+        "Projection": {
+          "ProjectionType": "ALL"
+        },
+        "IndexStatus": "ACTIVE",
+        "ProvisionedThroughput": {
+          "NumberOfDecreasesToday": 0,
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "IndexSizeBytes": 1820,
+        "ItemCount": 6,
+        "IndexArn": "arn:aws:dynamodb:ap-northeast-2:733581661905:table/movie/index/gsi1"
+      },
+      {
+        "IndexName": "gsi2",
+        "KeySchema": [
+          {
+            "AttributeName": "gsi2_pk",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "gsi2_sk",
+            "KeyType": "RANGE"
+          }
+        ],
+        "Projection": {
+          "ProjectionType": "ALL"
+        },
+        "IndexStatus": "ACTIVE",
+        "ProvisionedThroughput": {
+          "NumberOfDecreasesToday": 0,
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "IndexSizeBytes": 0,
+        "ItemCount": 0,
+        "IndexArn": "arn:aws:dynamodb:ap-northeast-2:733581661905:table/movie/index/gsi2"
+      },
+      {
+        "IndexName": "gsi_et",
+        "KeySchema": [
+          {
+            "AttributeName": "gsi_et_pk",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "gsi_et_sk",
+            "KeyType": "RANGE"
+          }
+        ],
+        "Projection": {
+          "ProjectionType": "ALL"
+        },
+        "IndexStatus": "ACTIVE",
+        "ProvisionedThroughput": {
+          "NumberOfDecreasesToday": 0,
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "IndexSizeBytes": 1203,
+        "ItemCount": 3,
+        "IndexArn": "arn:aws:dynamodb:ap-northeast-2:733581661905:table/movie/index/gsi_et"
+      }
+    ]
+  }
+}

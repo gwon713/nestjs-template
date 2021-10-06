@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@forme/utils": ["libs/utils/src"],
+      "@forme/utils/*": ["libs/utils/src/*"],
+      "@forme/user": ["libs/user/src"],
+      "@forme/user/*": ["libs/user/src/*"],
+      "@forme/mall": ["libs/mall/src"],
+      "@forme/mall/*": ["libs/mall/src/*"],
+      "@forme/manager": ["libs/manager/src"],
+      "@forme/manager/*": ["libs/manager/src/*"],
+      "@forme/types": ["libs/types/src"],
+      "@forme/types/*": ["libs/types/src/*"],
+      "@forme/contract": ["libs/contract/src"],
+      "@forme/contract/*": ["libs/contract/src/*"],
+      "@forme/movie": ["libs/movie/src"],
+      "@forme/movie/*": ["libs/movie/src/*"]
+    }
+  }
+}

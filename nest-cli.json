@@ -1,0 +1,102 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/sample/src",
+  "monorepo": true,
+  "root": "apps/sample",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/sample/tsconfig.app.json"
+  },
+  "projects": {
+    "sample": {
+      "type": "application",
+      "root": "apps/sample",
+      "entryFile": "main",
+      "sourceRoot": "apps/sample/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/sample/tsconfig.app.json"
+      }
+    },
+    "utils": {
+      "type": "library",
+      "root": "libs/utils",
+      "entryFile": "index",
+      "sourceRoot": "libs/utils/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/utils/tsconfig.lib.json"
+      }
+    },
+    "user-server": {
+      "type": "application",
+      "root": "apps/user-server",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-server/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-server/tsconfig.app.json"
+      }
+    },
+    "user": {
+      "type": "library",
+      "root": "libs/user",
+      "entryFile": "index",
+      "sourceRoot": "libs/user/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/user/tsconfig.lib.json"
+      }
+    },
+    "mall": {
+      "type": "library",
+      "root": "libs/mall",
+      "entryFile": "index",
+      "sourceRoot": "libs/mall/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/mall/tsconfig.lib.json"
+      }
+    },
+    "manager": {
+      "type": "library",
+      "root": "libs/manager",
+      "entryFile": "index",
+      "sourceRoot": "libs/manager/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/manager/tsconfig.lib.json"
+      }
+    },
+    "types": {
+      "type": "library",
+      "root": "libs/types",
+      "entryFile": "index",
+      "sourceRoot": "libs/types/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/types/tsconfig.lib.json"
+      }
+    },
+    "movie-server": {
+      "type": "application",
+      "root": "apps/movie-server",
+      "entryFile": "main",
+      "sourceRoot": "apps/movie-server/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/movie-server/tsconfig.app.json"
+      }
+    },
+    "movie": {
+      "type": "library",
+      "root": "libs/movie",
+      "entryFile": "index",
+      "sourceRoot": "libs/movie/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/movie/tsconfig.lib.json"
+      }
+    },
+    "contract": {
+      "type": "library",
+      "root": "libs/contract",
+      "entryFile": "index",
+      "sourceRoot": "libs/contract/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/contract/tsconfig.lib.json"
+      }
+    }
+  }
+}

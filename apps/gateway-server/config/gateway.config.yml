@@ -1,0 +1,85 @@
+http:
+  port: ${PORT_GATEWAY:-80}
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  userBlock:
+    host: '*'
+    paths: ['/v1/user', '/v1/user/*']
+  mallBlock:
+    host: '*'
+    paths: ['/v1/mall', '/v1/mall/*']
+  managerBlock:
+    host: '*'
+    paths: ['/v1/manager', '/v1/manager/*']
+  contractBlock:
+    host: '*'
+    paths: ['/v1/contract', '/v1/contract/*']
+  movieBlock:
+    host: '*'
+    paths: ['/v1/movie', '/v1/movie/*']
+
+serviceEndpoints:
+  userService:
+    url: ${URL_USER:-http://users-server:3701}
+  mallService:
+    url: ${URL_USER:-http://users-server:3701}
+  managerService:
+    url: ${URL_USER:-http://users-server:3701}
+  contractService:
+    url: ${URL_MOVIE:-http://movie-server:3702}
+  movieService:
+    url: ${URL_MOVIE:-http://movie-server:3702}
+
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+
+pipelines:
+  userBlockPipeline:
+    apiEndpoints:
+      - userBlock
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: userService
+              changeOrigin: true
+  mallBlockPipeline:
+    apiEndpoints:
+      - mallBlock
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: mallService
+              changeOrigin: true
+  managerBlockPipeline:
+    apiEndpoints:
+      - managerBlock
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: managerService
+              changeOrigin: true
+  contractBlockPipeline:
+    apiEndpoints:
+      - contractBlock
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: contractService
+              changeOrigin: true
+  movieBlockPipeline:
+    apiEndpoints:
+      - movieBlock
+    policies:
+      - proxy:
+          - action:
+              serviceEndpoint: movieService
+              changeOrigin: true

@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  gateway-server:
+    container_name: gateway-server
+    build:
+      context: .
+      dockerfile: dockerfiles/gateway.Dockerfile
+    command: yarn start
+    ports:
+      - 80:3700
+      - 9876:9876
+    networks:
+      - nestnet
+    environment:
+      - PORT_GATEWAY=3700
+      - URL_USER=http://user-server:3701
+  user-server:
+    container_name: user-server
+    build:
+      context: .
+      target: production
+      dockerfile: dockerfiles/user.Dockerfile
+    # command: node dist/apps/user-server/main
+    command: yarn start:prod
+    expose:
+      - 3701
+    networks:
+      - nestnet
+  movie-server:
+    container_name: movie-server
+    build:
+      context: .
+      target: production
+      dockerfile: dockerfiles/movie.Dockerfile
+    # command: node dist/apps/user-server/main
+    command: yarn start:prod
+    expose:
+      - 3702
+    networks:
+      - nestnet
+networks:
+  nestnet:
+volumes:
+  pgdata:
